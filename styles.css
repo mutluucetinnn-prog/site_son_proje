@@ -1,0 +1,83 @@
+:root{
+  /* --- GÜNCELLENMİŞ AÇIK RENKLER --- */
+  --bg:#F0F0F0;         /* Sayfa Arka Planı (Çok Açık Gri) */
+  --panel:#FFFFFF;      /* İç Paneller, Kartlar (Beyaz) */
+  --accent:#0b3b66;     /* Mavi Vurgu Rengi */
+  --accent2:#f59e0b;    /* Turuncu CTA Rengi */
+  --muted:#4f6075;      /* Açık Arka Planda Gri Metin */
+  --white:#1f2937;      /* Açık Arka Planda Koyu Metin/Başlıklar */
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--muted);line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:24px}
+/* Topbar (Navigasyon Çubuğu) Açık Renk */
+.topbar{background:var(--panel);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(0,0,0,0.05)} 
+.topgrid{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:90px;height:auto}
+.brandtext h1{color:var(--white);margin:0;font-size:18px}
+.brandtext p{color:var(--muted);margin:0;font-size:13px}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:var(--white);text-decoration:none;padding:8px 12px;border-radius:6px} /* Linkler koyu renk oldu */
+.nav a.btn{background:var(--accent2);color:#07243a;font-weight:700}
+/* HERO ALANI */
+.hero{position:relative;overflow:hidden;margin-top:0}
+.heroimg{width:100%;height:520px;object-fit:cover;filter:contrast(85%) brightness(70%)}
+/* Metnin görselin üzerinde görünmesini sağlayan kural */
+.herooverlay{position:absolute;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:40px}
+.herotext{max-width:640px;color:var(--white)} 
+.herotext h2{font-size:40px;margin:0 0 12px 0;line-height:1.02}
+.herotext p{color:rgba(255,255,255,0.9)}
+.cta{display:inline-block;background:var(--accent2);color:#07243a;padding:12px 18px;border-radius:8px;font-weight:700;margin-top:12px;text-decoration:none}
+.herokpi{display:flex;gap:18px}
+.kpi{background:rgba(255,255,255,0.03);padding:18px;border-radius:8px;text-align:center;color:var(--white)} 
+.kpi h3{margin:0;font-size:26px}
+/* İçerik alanındaki arka planı kaldırdık */
+.content{padding:40px 0;background:none;}
+.block{margin-bottom:34px}
+.services .servicegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+/* Hizmet bloklarının arka planı beyaz oldu */
+.servicegrid article{background:var(--panel);padding:20px;border-radius:10px;border:1px solid #e0e0e0;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+.servicegrid article h4{color:var(--accent)} 
+
+.gallery .gallerygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px}
+.about .facts{display:flex;gap:14px;margin-top:12px}
+/* Hakkımızda panelinin arka planı beyaz oldu */
+.about .facts div{background:var(--panel);padding:12px;border-radius:8px;flex:1;border:1px solid #e0e0e0;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+
+.contact .contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.mapplaceholder{height:200px;background:linear-gradient(90deg,#e0e0e0,#f0f0f0);border-radius:8px;margin-top:12px}
+
+/* İLETİŞİM FORMUNU DÜZELTME VE GÖNDER BUTONU RENGİ */
+.contactform form label, 
+.contactform form input, 
+.contactform form textarea {
+    display: block; 
+    width: 100%;     
+    margin-bottom: 8px; 
+}
+.contactform form input:not([type="submit"]){
+    padding: 10px;
+    border: 1px solid var(--muted);
+    background-color: var(--panel);
+    border-radius: 6px;
+    color: var(--white);
+}
+.submitbtn{
+  background:var(--accent2); /* Turuncu vurgu rengi */
+  color:#07243a;             /* Üzerindeki yazı koyu renk */
+  padding:12px 18px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  margin-top:10px
+}
+.footer{border-top:1px solid rgba(0,0,0,0.1);padding:18px 0;color:var(--muted);background:var(--panel)}
+
+@media(max-width:900px){
+  .herooverlay{flex-direction:column;align-items:flex-start;padding:20px}
+  .herokpi{width:100%;justify-content:space-between}
+  .contact .contactgrid{grid-template-columns:1fr}
+  .nav{display:none}
+}
